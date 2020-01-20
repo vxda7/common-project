@@ -1,4 +1,13 @@
 import React from "react";
+import // Table,
+// TableBody,
+// TableCell,
+// TableContainer,
+// TableHead,
+// TableRow,
+// makeStyles,
+// Paper
+"@material-ui/core";
 
 const Board = ({ one }) => {
   return (
