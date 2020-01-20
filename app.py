@@ -1,4 +1,5 @@
-from flask import Flask
+# -*- coding:utf-8 -*-
+from flask import Flask, json, Response
 from flask_restful import Resource, Api
 from flask_restful import reqparse
 import requests
@@ -17,13 +18,16 @@ class CreateUser(Resource):
             ul = bs_obj.find("ul", {"class": "type06_headline"})
             lis = ul.findAll("li")
             file_data = dict()
+            txt = []
             number = 0
             for li in lis:
                 number = number + 1
-                txt = li.find("dt", {"class": ""}).find("a").text.strip()
-                file_data["article"+str(number)] = txt
-                print(txt)
-            return file_data
+                txt.append(li.find("dt", {"class": ""}).find("a").text.strip())
+            file_data["article"] = txt
+            json_string = json.dumps(file_data, ensure_ascii=False)
+            response = Response(
+                json_string, content_type="application/json; charset=utf-8")
+            return response
         except Exception as e:
             return {'error': str(e)}
 
