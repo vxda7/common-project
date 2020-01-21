@@ -19,16 +19,20 @@ const News = () => {
   const URL = "http://127.0.0.1/user";
   const [datas, setDatas] = useState([]);
   axios
-    .get(URL)
+    .post(URL)
     .then(res => {
-      setDatas(res.data.article);
+      console.log(res);
+      setDatas(res.data.news);
     })
     .catch(e => {
       console.log(e);
     });
   return datas.map(data => (
     <div key={data}>
-      <h4>{data}</h4>
+      <a href={data.urltitle}>
+        <img src={data.imgurl} alt="" />
+        <h4>{data.title}</h4>
+      </a>
     </div>
   ));
 

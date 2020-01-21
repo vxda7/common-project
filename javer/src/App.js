@@ -9,6 +9,8 @@ import {
 } from "@material-ui/core";
 import Stock from "./components/Stock";
 import Home from "./components/Home";
+import Fund from "./components/Fund";
+import Coin from "./components/Coin";
 import Estate from "./components/Estate";
 import Question from "./components/Question";
 import { makeStyles } from "@material-ui/core/styles";
@@ -64,7 +66,7 @@ const App = () => {
   };
   return (
     <div>
-      <AppBar position="fixed" color="default">
+      <AppBar position="static" color="default">
         <Toolbar
           style={{
             display: "flex",
@@ -151,6 +153,8 @@ const App = () => {
         <Route path="/stock" component={Stock} />
         <Route path="/estate" component={Estate} />
         <Route path="/question" component={Question} />
+        <Route path="/fund" component={Fund} />
+        <Route path="/coin" component={Coin} />
       </div>
     </div>
   );

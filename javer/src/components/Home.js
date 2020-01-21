@@ -9,7 +9,8 @@ import RestoreIcon from "@material-ui/icons/Restore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import Substock from "./Substock";
-// import axios from "axios";
+// import Carousel from "react-material-ui-carousel";
+import Ctest from "./Ctest";
 
 const useStyles = makeStyles({
   root: {
@@ -30,13 +31,12 @@ const Home = () => {
     >
       <Grid
         style={{
-          backgroundColor: "lightblue",
-          height: "30rem",
-          width: "100%",
-          marginTop: "4rem"
+          backgroundColor: "white",
+          width: "100%"
+          // marginTop: "4rem"
         }}
       >
-        ㅎㅇㅎㅇ
+        <Ctest />
       </Grid>
       <Grid
         container
@@ -44,7 +44,7 @@ const Home = () => {
         justify="flex-start"
         alignItems="center"
         style={{
-          backgroundColor: "gray",
+          backgroundColor: "  ",
           width: "100%"
         }}
       >
@@ -75,7 +75,7 @@ const Home = () => {
       </Grid>
       <Grid
         style={{
-          backgroundColor: "light  blue",
+          backgroundColor: "lightgray",
           height: "30rem",
           width: "100%"
         }}
