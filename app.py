@@ -5,7 +5,9 @@ from flask_restful import reqparse
 import requests
 from urllib.request import urlopen
 import bs4
+from flask_cors import CORS
 app = Flask(__name__)
+api = CORS(app)
 api = Api(app)
 
 
@@ -34,4 +36,4 @@ class CreateUser(Resource):
 
 api.add_resource(CreateUser, '/user')
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=80, debug=True)

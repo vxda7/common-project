@@ -10,7 +10,7 @@ import RestoreIcon from "@material-ui/icons/Restore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import Substock from "./Substock";
-import axios from "axios";
+// import axios from "axios";
 
 const useStyles = makeStyles({
   root: {
@@ -27,38 +27,35 @@ const Home = () => {
       direction="column"
       justify="center"
       alignItems="center"
-      background="black"
+      backgroundColor="black"
     >
       <Grid
         style={{
-          "background-color": "lightblue",
+          backgroundColor: "lightblue",
           height: "30rem",
-          width: "100%"
+          width: "100%",
+          marginTop: "4rem"
         }}
       >
         ㅎㅇㅎㅇ
       </Grid>
       <Grid
-        justify="center"
+        container
+        direction="column"
+        justify="flex-start"
+        alignItems="center"
         style={{
-          "background-color": "gray",
-          height: "30rem",
+          backgroundColor: "gray",
           width: "100%"
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            background: "white"
-          }}
-        >
+        <Grid item xs={12}>
           <BottomNavigation
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
             }}
-            showLabels
+            showLabel
             className={classes.root}
           >
             <Link to="/home">
@@ -71,13 +68,15 @@ const Home = () => {
               <BottomNavigationAction label="Coin" icon={<LocationOnIcon />} />
             </Link>
           </BottomNavigation>
-        </div>
-        <Route path="/home" exact component={News} />
-        <Route path="/home/substock" component={Substock} />
+        </Grid>
+        <Grid item xs={12}>
+          <Route path="/home" exact component={News} />
+          <Route path="/home/substock" component={Substock} />
+        </Grid>
       </Grid>
       <Grid
         style={{
-          "background-color": "light  blue",
+          backgroundColor: "light  blue",
           height: "30rem",
           width: "100%"
         }}

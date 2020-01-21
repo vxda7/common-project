@@ -64,7 +64,7 @@ const App = () => {
   };
   return (
     <div>
-      <AppBar position="fixed" color="light">
+      <AppBar position="fixed" color="default">
         <Toolbar
           style={{
             display: "flex",
