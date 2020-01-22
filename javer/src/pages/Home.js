@@ -1,16 +1,16 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import { Link, Route } from "react-router-dom";
-import News from "./News";
+import News from "../components/News";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import RestoreIcon from "@material-ui/icons/Restore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
-import Substock from "./Substock";
+import Substock from "../components/Substock";
 // import Carousel from "react-material-ui-carousel";
-import Ctest from "./Ctest";
+import Ctest from "../components/Ctest";
 
 const useStyles = makeStyles({
   root: {

@@ -1,6 +1,7 @@
 import React from "react";
-import Board from "./Board";
+import Board from "../components/Board";
 import { Grid } from "@material-ui/core";
+import qa from "../images/Q&A.png";
 // import { makeStyles } from "@material-ui/core/styles";
 // import Table from "@material-ui/core/Table";
 // import TableBody from "@material-ui/core/TableBody";
@@ -39,6 +40,9 @@ const Question = () => {
   ];
   return (
     <Grid container style={{ marginTop: "10px" }}>
+      <Grid item xs={12}>
+        <img src={qa} alt="" height="80px" />
+      </Grid>
       <Grid item xs={8}>
         {datas.map(data => (
           <Board one={data} />
@@ -47,26 +51,6 @@ const Question = () => {
       <Grid item xs={4}></Grid>
     </Grid>
   );
-  // <TableContainer comopnent={Paper} style={{ marginTop: "60px" }}>
-  //   <Table>
-  //     <TableHead>
-  //       <TableRow>
-  //         <TableCell align="center">번호</TableCell>
-  //         <TableCell align="center">제목</TableCell>
-  //         <TableCell align="center">날짜</TableCell>
-  //       </TableRow>
-  //     </TableHead>
-  //     <TableBody>
-  //       {datas.map(data => (
-  //         <TableRow key={data.id}>
-  //           <TableCell align="center">{data.id}</TableCell>
-  //           <TableCell align="center">{data.title}</TableCell>
-  //           <TableCell align="center">{data.date}</TableCell>
-  //         </TableRow>
-  //       ))}
-  //     </TableBody>
-  //   </Table>
-  // </TableContainer>
 };
 
 export default Question;
