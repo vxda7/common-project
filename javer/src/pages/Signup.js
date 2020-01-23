@@ -13,6 +13,7 @@ const Signup = () => {
   const [favor_ctg, setFavor_ctg] = useState("");
   const [photo, setPhoto] = useState("");
   const [birth_date, setBirth_date] = useState("");
+  const [password, setPassword] = useState("");
 
   const setIdText = e => {
     setId(e.target.value);
@@ -50,27 +51,47 @@ const Signup = () => {
     setBirth_date(e.target.value);
   };
 
+  const setPasswordText = e => {
+    setPassword(e.target.value);
+  };
+
   const save = e => {
     e.preventDefault();
     const URL = "http://localhost:9090/rest/addMem";
     const data = {
-      uid: { id },
-      uname: { name },
-      unickname: { nickname },
-      uphonenum: { phonenumber },
-      uemail: { email },
-      uaddress: { address },
-      ufavor_ctg: { favor_ctg },
-      uphoto: { photo },
-      ubirth_date: { birth_date }
+      uid: id,
+      upw: password,
+      uname: name,
+      unickname: nickname,
+      uphonenum: phonenumber,
+      uemail: email,
+      uaddress: address,
+      ufavor_ctg: favor_ctg,
+      uprofilephoto: photo,
+      ubirth_date: birth_date
     };
-    axios.post(URL, data);
+    console.log(data);
+    axios
+      .post(
+        URL,
+        // (req, res) => {
+        // res.header("Access-Control-Allow-Origin", "*");
+        // res.send(data);}
+        data
+      )
+      .then(res => {
+        console.log(res);
+      })
+      .catch(e => console.log(e));
   };
 
   return (
     <form onSubmit={save}>
       <FormLabel htmlFor="id">ID</FormLabel>
       <Input name="id" id="id" onChange={setIdText} />
+      <br />
+      <FormLabel htmlFor="password">Password</FormLabel>
+      <Input name="password" id="password" onChange={setPasswordText} />
       <br />
       <FormLabel htmlFor="name">Name</FormLabel>
       <Input name="name" id="name" onChange={setNameText} />
