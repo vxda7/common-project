@@ -70,7 +70,11 @@ const App = () => {
   const signupstyle = { fontSize: "7px" };
   return (
     <div>
-      <AppBar position="static" color="default">
+      <AppBar
+        position="static"
+        color="default"
+        style={{ backgroundColor: "rgba(255, 255, 255, 0)" }}
+      >
         <Toolbar
           style={{
             display: "flex",

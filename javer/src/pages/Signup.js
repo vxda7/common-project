@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "@material-ui/core/Input";
 import FormLabel from "@material-ui/core/FormLabel";
+import { Grid } from "@material-ui/core";
 import axios from "axios";
 
 const Signup = () => {
@@ -72,13 +73,7 @@ const Signup = () => {
     };
     console.log(data);
     axios
-      .post(
-        URL,
-        // (req, res) => {
-        // res.header("Access-Control-Allow-Origin", "*");
-        // res.send(data);}
-        data
-      )
+      .post(URL, data)
       .then(res => {
         console.log(res);
       })
@@ -87,41 +82,49 @@ const Signup = () => {
 
   return (
     <form onSubmit={save}>
-      <FormLabel htmlFor="id">ID</FormLabel>
-      <Input name="id" id="id" onChange={setIdText} />
-      <br />
-      <FormLabel htmlFor="password">Password</FormLabel>
-      <Input name="password" id="password" onChange={setPasswordText} />
-      <br />
-      <FormLabel htmlFor="name">Name</FormLabel>
-      <Input name="name" id="name" onChange={setNameText} />
-      <br />
-      <FormLabel htmlFor="name">Nickname</FormLabel>
-      <Input name="nickname" id="nickname" onChange={setNicknameText} />
-      <br />
-      <FormLabel htmlFor="phonenumber">Phonenumber</FormLabel>
-      <Input
-        name="phonenumber"
-        id="phonenumber"
-        onChange={setPhonenumberText}
-      />
-      <br />
-      <FormLabel htmlFor="email">Email</FormLabel>
-      <Input name="email" id="email" onChange={setEmailText} />
-      <br />
-      <FormLabel htmlFor="address">Address</FormLabel>
-      <Input name="address" id="address" onChange={setAddressText} />
-      <br />
-      <FormLabel htmlFor="favor_ctg">Favor_ctg</FormLabel>
-      <Input name="favor_ctg" id="favor_ctg" onChange={setFavor_ctgText} />
-      <br />
-      <FormLabel htmlFor="photo">Photo</FormLabel>
-      <Input name="photo" id="photo" onChange={setPhotoText} />
-      <br />
-      <FormLabel htmlFor="birth_date">Birth_date</FormLabel>
-      <Input name="birth_date" id="birth_date" onChange={setBirth_dateText} />
-      <br />
-      <Input type="submit" value="제출" />
+      <Grid
+        container
+        direction="column"
+        justify="flex-start"
+        alignItems="center"
+      >
+        <h1 style={{ color: "blue" }}>JAVER</h1>
+        <FormLabel htmlFor="id">ID</FormLabel>
+        <Input name="id" id="id" onChange={setIdText} />
+        <br />
+        <FormLabel htmlFor="password">Password</FormLabel>
+        <Input name="password" id="password" onChange={setPasswordText} />
+        <br />
+        <FormLabel htmlFor="name">Name</FormLabel>
+        <Input name="name" id="name" onChange={setNameText} />
+        <br />
+        <FormLabel htmlFor="name">Nickname</FormLabel>
+        <Input name="nickname" id="nickname" onChange={setNicknameText} />
+        <br />
+        <FormLabel htmlFor="phonenumber">Phonenumber</FormLabel>
+        <Input
+          name="phonenumber"
+          id="phonenumber"
+          onChange={setPhonenumberText}
+        />
+        <br />
+        <FormLabel htmlFor="email">Email</FormLabel>
+        <Input name="email" id="email" onChange={setEmailText} />
+        <br />
+        <FormLabel htmlFor="address">Address</FormLabel>
+        <Input name="address" id="address" onChange={setAddressText} />
+        <br />
+        <FormLabel htmlFor="favor_ctg">Favor_ctg</FormLabel>
+        <Input name="favor_ctg" id="favor_ctg" onChange={setFavor_ctgText} />
+        <br />
+        <FormLabel htmlFor="photo">Photo</FormLabel>
+        <Input name="photo" id="photo" onChange={setPhotoText} />
+        <br />
+        <FormLabel htmlFor="birth_date">Birth_date</FormLabel>
+        <Input name="birth_date" id="birth_date" onChange={setBirth_dateText} />
+        <br />
+        <Input type="submit" value="제출" />
+      </Grid>
     </form>
   );
 };
