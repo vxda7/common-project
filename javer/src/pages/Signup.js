@@ -52,19 +52,19 @@ const Signup = () => {
 
   const save = e => {
     e.preventDefault();
-    const URL = "";
+    const URL = "http://localhost:9090/rest/addMem";
     const data = {
-      id: { id },
-      name: { name },
-      nickname: { nickname },
-      phonenumber: { phonenumber },
-      email: { email },
-      address: { address },
-      favor_ctg: { favor_ctg },
-      photo: { photo },
-      birth_date: { birth_date }
+      uid: { id },
+      uname: { name },
+      unickname: { nickname },
+      uphonenum: { phonenumber },
+      uemail: { email },
+      uaddress: { address },
+      ufavor_ctg: { favor_ctg },
+      uphoto: { photo },
+      ubirth_date: { birth_date }
     };
-    axios.post({ URL }, data);
+    axios.post(URL, data);
   };
 
   return (

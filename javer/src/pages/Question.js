@@ -1,15 +1,7 @@
 import React from "react";
 import Board from "../components/Board";
-import { Grid } from "@material-ui/core";
+import { Grid, Button } from "@material-ui/core";
 import qa from "../images/Q&A.png";
-// import { makeStyles } from "@material-ui/core/styles";
-// import Table from "@material-ui/core/Table";
-// import TableBody from "@material-ui/core/TableBody";
-// import TableCell from "@material-ui/core/TableCell";
-// import TableContainer from "@material-ui/core/TableContainer";
-// import TableHead from "@material-ui/core/TableHead";
-// import TableRow from "@material-ui/core/TableRow";
-// import Paper from "@material-ui/core/Paper";
 
 const Question = () => {
   const datas = [
@@ -40,8 +32,32 @@ const Question = () => {
   ];
   return (
     <Grid container style={{ marginTop: "10px" }}>
-      <Grid item xs={12}>
-        <img src={qa} alt="" height="80px" />
+      <Grid
+        item
+        xs={12}
+        container
+        direction="row"
+        justify="space-around"
+        alignItems="center"
+        style={{
+          border: "1px solid #c8d0d0",
+          borderRadius: "5px",
+          marginTop: "5px",
+          height: "5rem"
+        }}
+      >
+        <Grid item xs={7} container direction="row" alignItems="center">
+          <img src={qa} alt="" height="70px" />
+          <h2>궁금한 것을 질문해 보세요!</h2>
+        </Grid>
+        <Grid item>
+          <Button variant="contained" color="primary" href="/create">
+            질문하기
+          </Button>
+        </Grid>
+      </Grid>
+      <Grid item xs={12} style={{ marginTop: "10px", marginBottom: "5px" }}>
+        <hr />
       </Grid>
       <Grid item xs={8}>
         {datas.map(data => (

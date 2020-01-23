@@ -1,6 +1,23 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Link } from "@material-ui/core";
 import questionicon from "../images/questionicon.png";
+import styled from "styled-components";
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  &:focus,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+`;
 
 const Board = ({ one }) => {
   return (
@@ -27,10 +44,17 @@ const Board = ({ one }) => {
         />
       </Grid>
       <Grid item xs={8}>
-        <div>
-          <h2>{one.title}</h2>
-          <p>{one.content}</p>
-        </div>
+        <StyledLink
+          style={{
+            color: "black"
+          }}
+          href={"/question/" + one.id}
+        >
+          <div>
+            <h2>{one.title}</h2>
+            <p>{one.content}</p>
+          </div>
+        </StyledLink>
       </Grid>
     </Grid>
   );

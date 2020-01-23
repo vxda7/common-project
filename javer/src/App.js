@@ -18,7 +18,8 @@ import Modal from "@material-ui/core/Modal";
 import TextField from "@material-ui/core/TextField";
 import { Grid } from "@material-ui/core";
 import Signup from "./pages/Signup";
-
+import Write from "./pages/Write";
+import DetailQuestion from "./pages/DetailQuestion";
 // import MenuIcon from "@material-ui/icons/Menu";
 
 function getModalStyle() {
@@ -182,6 +183,8 @@ const App = () => {
         <Route path="/fund" component={Fund} />
         <Route path="/coin" component={Coin} />
         <Route path="/signup" component={Signup} />
+        <Route path="/wirte" component={Write} />
+        <Route path="/question/:id" component={DetailQuestion} />
       </div>
     </div>
   );
