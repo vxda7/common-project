@@ -15,6 +15,7 @@ const Signup = () => {
   const [photo, setPhoto] = useState("");
   const [birth_date, setBirth_date] = useState("");
   const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
 
   const setIdText = e => {
     setId(e.target.value);
@@ -56,6 +57,10 @@ const Signup = () => {
     setPassword(e.target.value);
   };
 
+  const setConfirmText = e => {
+    setConfirm(e.target.value);
+  };
+
   const save = e => {
     e.preventDefault();
     const URL = "http://localhost:9090/rest/addMem";
@@ -89,38 +94,41 @@ const Signup = () => {
         alignItems="center"
       >
         <h1 style={{ color: "blue" }}>JAVER</h1>
-        <FormLabel htmlFor="id">ID</FormLabel>
+        <FormLabel htmlFor="id">아이디</FormLabel>
         <Input name="id" id="id" onChange={setIdText} />
         <br />
-        <FormLabel htmlFor="password">Password</FormLabel>
+        <FormLabel htmlFor="password">비밀번호</FormLabel>
         <Input name="password" id="password" onChange={setPasswordText} />
         <br />
-        <FormLabel htmlFor="name">Name</FormLabel>
+        <FormLabel htmlFor="confirm">비밀번호 재확인</FormLabel>
+        <Input name="confirm" id="confirm" onChange={setConfirmText} />
+        <br />
+        <FormLabel htmlFor="name">이름</FormLabel>
         <Input name="name" id="name" onChange={setNameText} />
         <br />
-        <FormLabel htmlFor="name">Nickname</FormLabel>
+        <FormLabel htmlFor="name">별명</FormLabel>
         <Input name="nickname" id="nickname" onChange={setNicknameText} />
         <br />
-        <FormLabel htmlFor="phonenumber">Phonenumber</FormLabel>
+        <FormLabel htmlFor="phonenumber">핸드폰</FormLabel>
         <Input
           name="phonenumber"
           id="phonenumber"
           onChange={setPhonenumberText}
         />
         <br />
-        <FormLabel htmlFor="email">Email</FormLabel>
+        <FormLabel htmlFor="email">이메일</FormLabel>
         <Input name="email" id="email" onChange={setEmailText} />
         <br />
-        <FormLabel htmlFor="address">Address</FormLabel>
+        <FormLabel htmlFor="address">주소</FormLabel>
         <Input name="address" id="address" onChange={setAddressText} />
         <br />
-        <FormLabel htmlFor="favor_ctg">Favor_ctg</FormLabel>
+        <FormLabel htmlFor="favor_ctg">선호분야</FormLabel>
         <Input name="favor_ctg" id="favor_ctg" onChange={setFavor_ctgText} />
         <br />
-        <FormLabel htmlFor="photo">Photo</FormLabel>
+        <FormLabel htmlFor="photo">프로필사진</FormLabel>
         <Input name="photo" id="photo" onChange={setPhotoText} />
         <br />
-        <FormLabel htmlFor="birth_date">Birth_date</FormLabel>
+        <FormLabel htmlFor="birth_date">생년월일</FormLabel>
         <Input name="birth_date" id="birth_date" onChange={setBirth_dateText} />
         <br />
         <Input type="submit" value="제출" />
